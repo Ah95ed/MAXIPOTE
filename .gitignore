@@ -1,0 +1,10 @@
+.import/
+.export/
+.cache/
+*.import
+*.tmp
+*.log
+*.exe
+*.apk
+*.pck
+*.zip
