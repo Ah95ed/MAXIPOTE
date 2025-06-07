@@ -1,3 +1,13 @@
-[gd_scene format=3 uid="uid://bbv0xa4kawq78"]
+[gd_scene load_steps=3 format=3 uid="uid://bbv0xa4kawq78"]
+
+[ext_resource type="PackedScene" uid="uid://dodmb0ymyhhe3" path="res://Models/boeing_fa-18f_super_hornet_-_free.glb" id="1_og0mp"]
+[ext_resource type="PackedScene" uid="uid://v03vj1x741ay" path="res://Models/colt_9mm_ar6951_semi-automatic_carbine.glb" id="2_o6wmf"]
 
 [node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.41078, 0)
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_og0mp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.4437, 31.099, 1.57014)
+
+[node name="Sketchfab_Scene2" parent="." instance=ExtResource("2_o6wmf")]
+transform = Transform3D(-0.00741259, 0, -0.466148, 0, 0.56, 0, -0.0276641, 0, 0.124904, -38, 55.5892, -157)
