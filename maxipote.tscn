@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://ctcder85iqx42"]
+
+[ext_resource type="PackedScene" uid="uid://bs2jm62cmkbrk" path="res://addons/instant-realistic-light/light_scene.tscn" id="1_b5o4j"]
+[ext_resource type="Texture2D" uid="uid://dlyfq4gcnur06" path="res://Models/grass.png" id="1_l5m5s"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3kq0w"]
+albedo_color = Color(0.00935659, 0.229547, 0.002434, 0.854902)
+albedo_texture = ExtResource("1_l5m5s")
+
+[sub_resource type="BoxMesh" id="BoxMesh_b5o4j"]
+size = Vector3(1000, 0.05, 900)
+
+[node name="maxipote" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3485, 4.8248, -45.1356)
+material_override = SubResource("StandardMaterial3D_3kq0w")
+mesh = SubResource("BoxMesh_b5o4j")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-2.44665e-08, 0.828676, -0.559728, 3.62226e-08, 0.559728, 0.828676, 1, 0, -4.37114e-08, -477.505, 425.901, 7)
+
+[node name="WorldEnvironment" parent="." instance=ExtResource("1_b5o4j")]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bbv0xa4kawq78"]
 
-[ext_resource type="PackedScene" uid="uid://dodmb0ymyhhe3" path="res://Models/boeing_fa-18f_super_hornet_-_free.glb" id="1_og0mp"]
-[ext_resource type="PackedScene" uid="uid://v03vj1x741ay" path="res://Models/colt_9mm_ar6951_semi-automatic_carbine.glb" id="2_o6wmf"]
+[ext_resource type="PackedScene" uid="uid://dmp1yu7noq1me" path="res://Models/boeing_fa-18f_super_hornet_-_free.glb" id="1_og0mp"]
+[ext_resource type="PackedScene" uid="uid://bcgy705ubjujx" path="res://Models/colt_9mm_ar6951_semi-automatic_carbine.glb" id="2_o6wmf"]
 
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.41078, 0)
