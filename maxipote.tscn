@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://ctcder85iqx42"]
+[gd_scene load_steps=8 format=3 uid="uid://ctcder85iqx42"]
 
 [ext_resource type="PackedScene" uid="uid://bs2jm62cmkbrk" path="res://addons/instant-realistic-light/light_scene.tscn" id="1_b5o4j"]
 [ext_resource type="Texture2D" uid="uid://dlyfq4gcnur06" path="res://Models/grass.png" id="1_l5m5s"]
 [ext_resource type="PackedScene" uid="uid://dgrhb7o2rb08p" path="res://Models/scene.gltf" id="3_6pn81"]
-[ext_resource type="PackedScene" uid="uid://dxhqcbpjbxm78" path="res://Models/christmas_decorations.glb" id="4_jm1sh"]
+[ext_resource type="PackedScene" uid="uid://bisqtor64pj5x" path="res://low_poly_home_2.glb" id="4_jm1sh"]
+[ext_resource type="PackedScene" uid="uid://3cg4iowkuaxj" path="res://Models/wall1/combine_wall_clusters.glb" id="5_7nr4s"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3kq0w"]
 albedo_color = Color(0.00935659, 0.229547, 0.002434, 0.854902)
@@ -19,13 +20,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9382, 4.8248, -45.3138)
 material_override = SubResource("StandardMaterial3D_3kq0w")
 mesh = SubResource("BoxMesh_b5o4j")
 
+[node name="Sketchfab_Scene" parent="MeshInstance3D" instance=ExtResource("3_6pn81")]
+transform = Transform3D(0.0590749, 0.00130206, 0.00726471, 0, 0.0898599, -0.00964376, -0.0062059, 0.0123945, 0.0691539, 123.301, 108.16, -14.8922)
+
+[node name="Sketchfab_Scene" parent="MeshInstance3D/Sketchfab_Scene" instance=ExtResource("3_6pn81")]
+transform = Transform3D(0.762132, 9.31323e-09, 4.09782e-08, 0, 0.97156, -1.11759e-08, -2.98023e-08, -4.47035e-08, 0.428781, 239.257, -25.3232, -1325.07)
+
+[node name="Sketchfab_Scene2" parent="MeshInstance3D" instance=ExtResource("3_6pn81")]
+transform = Transform3D(0.0594, 0, 0, 0, 0.09072, 0, 0, 0, 0.0702, 110.045, 76.4611, 90.8305)
+
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-2.44665e-08, 0.828676, -0.559728, 3.62226e-08, 0.559728, 0.828676, 1, -1.77636e-15, -4.37114e-08, -656.37, 573.901, -41)
 
 [node name="WorldEnvironment" parent="." instance=ExtResource("1_b5o4j")]
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("3_6pn81")]
-transform = Transform3D(0.0594, 0, 0, 0, 0.09072, 0, 0, 0, 0.0702, 81.1311, 128.852, 46.0552)
+transform = Transform3D(0.0594, 0, 0, 0, 0.09072, 0, 0, 0, 0.0702, -83.3162, 76.4611, 66.1957)
 
 [node name="Sketchfab_Scene2" parent="." instance=ExtResource("4_jm1sh")]
-transform = Transform3D(0.187725, 0, 0, 0, 0.187725, 0, 0, 0, 0.187725, 264.118, 75.9417, 6.61157)
+transform = Transform3D(21.342, 0, 0, 0, 21.342, 0, 0, 0, 21.342, -15.381, 40.1048, -19.6484)
+
+[node name="Sketchfab_Scene3" parent="." instance=ExtResource("5_7nr4s")]
+transform = Transform3D(3.22387, 0.0266713, 0, -0.0266629, 3.22287, -0.0806253, -0.000666994, 0.0806225, 3.22298, 176.23, 199.533, 37.3661)
