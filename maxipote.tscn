@@ -1,44 +1,95 @@
-[gd_scene load_steps=8 format=3 uid="uid://ctcder85iqx42"]
+[gd_scene load_steps=13 format=3 uid="uid://ctcder85iqx42"]
 
 [ext_resource type="PackedScene" uid="uid://bs2jm62cmkbrk" path="res://addons/instant-realistic-light/light_scene.tscn" id="1_b5o4j"]
 [ext_resource type="Texture2D" uid="uid://dlyfq4gcnur06" path="res://Models/grass.png" id="1_l5m5s"]
 [ext_resource type="PackedScene" uid="uid://dgrhb7o2rb08p" path="res://Models/scene.gltf" id="3_6pn81"]
-[ext_resource type="PackedScene" uid="uid://bisqtor64pj5x" path="res://low_poly_home_2.glb" id="4_jm1sh"]
 [ext_resource type="PackedScene" uid="uid://3cg4iowkuaxj" path="res://Models/wall1/combine_wall_clusters.glb" id="5_7nr4s"]
+[ext_resource type="PackedScene" uid="uid://cd6meey1c6jj1" path="res://Models/Castle/Castle.gltf" id="6_h8thf"]
+
+[sub_resource type="FogMaterial" id="FogMaterial_7nr4s"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3kq0w"]
+next_pass = SubResource("FogMaterial_7nr4s")
 albedo_color = Color(0.00935659, 0.229547, 0.002434, 0.854902)
 albedo_texture = ExtResource("1_l5m5s")
+albedo_texture_msdf = true
+grow_amount = 0.57
 
 [sub_resource type="BoxMesh" id="BoxMesh_b5o4j"]
-size = Vector3(1400, 0.05, 1000)
+size = Vector3(1400, 0.05, 1500)
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_gn88m"]
+ground_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Sky" id="Sky_tyhie"]
+sky_material = SubResource("PhysicalSkyMaterial_gn88m")
+radiance_size = 2
+
+[sub_resource type="Environment" id="Environment_f8w8m"]
+background_mode = 2
+background_intensity = 100000.0
+sky = SubResource("Sky_tyhie")
+tonemap_mode = 3
+tonemap_white = 8.0
+ssao_enabled = true
+ssao_detail = 2.0
+sdfgi_enabled = true
+sdfgi_bounce_feedback = 0.9
+glow_enabled = true
+glow_normalized = true
+glow_bloom = 0.2
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.01
+volumetric_fog_gi_inject = 1.14
+volumetric_fog_anisotropy = 0.7
+volumetric_fog_sky_affect = 0.295
+adjustment_saturation = 1.17
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_qo5hu"]
+exposure_multiplier = 3.069
+auto_exposure_scale = 0.22
+auto_exposure_speed = 0.8
+dof_blur_far_distance = 1.44
+dof_blur_near_distance = 0.01
+auto_exposure_min_sensitivity = 8.01
 
 [node name="maxipote" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9382, 4.8248, -45.3138)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.1736, 51.0447, 8.17166)
 material_override = SubResource("StandardMaterial3D_3kq0w")
 mesh = SubResource("BoxMesh_b5o4j")
 
 [node name="Sketchfab_Scene" parent="MeshInstance3D" instance=ExtResource("3_6pn81")]
-transform = Transform3D(0.0590749, 0.00130206, 0.00726471, 0, 0.0898599, -0.00964376, -0.0062059, 0.0123945, 0.0691539, 123.301, 108.16, -14.8922)
+transform = Transform3D(0.0590749, 0.00130206, 0.00726471, 0, 0.0898599, -0.00964376, -0.0062059, 0.0123945, 0.0691539, 560.77, 91.2724, 403.086)
 
 [node name="Sketchfab_Scene" parent="MeshInstance3D/Sketchfab_Scene" instance=ExtResource("3_6pn81")]
 transform = Transform3D(0.762132, 9.31323e-09, 4.09782e-08, 0, 0.97156, -1.11759e-08, -2.98023e-08, -4.47035e-08, 0.428781, 239.257, -25.3232, -1325.07)
 
 [node name="Sketchfab_Scene2" parent="MeshInstance3D" instance=ExtResource("3_6pn81")]
-transform = Transform3D(0.0594, 0, 0, 0, 0.09072, 0, 0, 0, 0.0702, 110.045, 76.4611, 90.8305)
+transform = Transform3D(0.0594, 0, 0, 0, 0.09072, 0, 0, 0, 0.0702, 551.186, 99.1433, 520.306)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-2.44665e-08, 0.828676, -0.559728, 3.62226e-08, 0.559728, 0.828676, 1, -1.77636e-15, -4.37114e-08, -656.37, 573.901, -41)
-
-[node name="WorldEnvironment" parent="." instance=ExtResource("1_b5o4j")]
+transform = Transform3D(-3.19591e-08, 0.682228, -0.731139, 2.98211e-08, 0.731139, 0.682228, 1, -8.22086e-16, -4.37114e-08, -583.69, 393.529, -41)
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("3_6pn81")]
-transform = Transform3D(0.0594, 0, 0, 0, 0.09072, 0, 0, 0, 0.0702, -83.3162, 76.4611, 66.1957)
+transform = Transform3D(0.0594, 0, 0, 0, 0.09072, 0, 0, 0, 0.0702, 493.154, 111.84, 587.907)
 
-[node name="Sketchfab_Scene2" parent="." instance=ExtResource("4_jm1sh")]
-transform = Transform3D(21.342, 0, 0, 0, 21.342, 0, 0, 0, 21.342, -15.381, 40.1048, -19.6484)
+[node name="wall2" parent="." instance=ExtResource("5_7nr4s")]
+transform = Transform3D(3.22387, 0.0266713, 0, -0.0266629, 3.22287, -0.0806253, -0.000666994, 0.0806225, 3.22298, 303.71, 60.9813, -19.3747)
 
-[node name="Sketchfab_Scene3" parent="." instance=ExtResource("5_7nr4s")]
-transform = Transform3D(3.22387, 0.0266713, 0, -0.0266629, 3.22287, -0.0806253, -0.000666994, 0.0806225, 3.22298, 176.23, 199.533, 37.3661)
+[node name="wall1" parent="." instance=ExtResource("5_7nr4s")]
+transform = Transform3D(3.22387, 0.0266713, 0, -0.0266629, 3.22287, -0.0806253, -0.000666994, 0.0806225, 3.22298, 294.302, 66.916, 183.408)
+
+[node name="wall3" parent="." instance=ExtResource("5_7nr4s")]
+transform = Transform3D(3.22387, 0.0266713, 0, -0.0266629, 3.22287, -0.0806253, -0.000666994, 0.0806225, 3.22298, 272.309, 87.8697, 381.683)
+
+[node name="wall4" parent="." instance=ExtResource("5_7nr4s")]
+transform = Transform3D(0.0125956, -0.0805233, -3.22296, -0.0266629, 3.22287, -0.0806253, 3.22385, 0.0269694, 0.0119253, 174.647, 78.1571, 474.734)
+
+[node name="Home" parent="." instance=ExtResource("6_h8thf")]
+transform = Transform3D(26.9154, 0, -187.757, 0, 206.415, 0, 194.318, 0, 26.0067, 22.8859, 168.812, -103.008)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." instance=ExtResource("1_b5o4j")]
+environment = SubResource("Environment_f8w8m")
+camera_attributes = SubResource("CameraAttributesPractical_qo5hu")
